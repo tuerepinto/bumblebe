@@ -21,7 +21,7 @@ func main() {
 
 func getValueInvestBySymbol(response http.ResponseWriter, request *http.Request) {
 	symbol := mux.Vars(request)
-	URI_INFOR := "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol["symbol"] + "&interval=5min&apikey=IBLB3IAD7UGS91E2"
+	URI_INFOR := "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + symbol["symbol"] + "&interval=5min&apikey="
 	getUrl, err := http.Get(URI_INFOR)
 	if err != nil {
 		response.Header().Set("Content-Type", "application/json; charset=UTF-8")
